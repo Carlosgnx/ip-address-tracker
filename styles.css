@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Rubik", sans-serif;
+}
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-size: 1.6rem;
+}
+/*Header*/
+header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(./images/pattern-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 36vh;
+}
+header h1 {
+  color: white;
+  font-weight: 500;
+  font-size: 2.6rem;
+  margin-top: 2rem;
+}
+.header__input-box {
+  display: flex;
+  margin: 1rem 0;
+  justify-content: stretch;
+  width: 90%;
+  max-width: 55rem;
+}
+.header__input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.8rem;
+  padding: 1.5rem;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
+}
+.header__input-box button {
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 1.5rem 2rem;
+  border: none;
+  background-color: black;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.header__input-box button:hover {
+  background-color: var(--very-dark-gray);
+}
+.header__info {
+  z-index: 1;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 90%;
+  max-width: 120rem;
+  background-color: white;
+  bottom: 0;
+  transform: translate(0, 50%);
+  border-radius: 1rem;
+  padding: 2rem 0;
+  box-shadow: 0.1rem 0.1rem 2rem 0.1rem rgba(0, 0, 0, 0.5);
+}
+.header__info > div {
+  padding: 1rem;
+}
+.header__info-title {
+  margin-bottom: 0.5rem;
+  color: var(--dark-gray);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+}
+.header__info-text {
+  font-weight: 500;
+  font-size: 1.8rem;
+}
+/*end of Header*/
+
+/*Main content*/
+#map {
+  z-index: 0;
+  flex: 1;
+}
+/*end of Main content*/
+
+/*960px*/
+@media screen and (min-width: 60em) {
+  .header__info {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    text-align: start;
+  }
+  .header__info > div {
+    min-height: 10rem;
+    max-height: 10rem;
+    max-width: 30rem;
+    overflow: hidden;
+  }
+  .header__info > hr {
+    height: 10rem;
+  }
+  header h1 {
+    margin-top: 4rem;
+  }
+  .header__input-box {
+    margin-top: 4rem;
+  }
+}
+/*1024px*/
+@media screen and (min-width: 64em) {
+  .header__info-text {
+    font-size: 2rem;
+  }
+  header h1 {
+    font-size: 3.2rem;
+  }
+}
+
+/*1240px*/
+@media screen and (min-width: 77.5em) {
+  .header__info-title {
+    font-size: 1.4rem;
+  }
+  .header__info-text {
+    font-size: 3rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
